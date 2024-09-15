@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital clock</title>
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1e1e1e;
+    font-family: 'Orbitron', sans-serif;
+    flex-direction: column;
+}
+
+.clock-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #333;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Styling for the first clock (outer) */
+.outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #444;
+    padding: 20px 40px;
+    border-radius: 12px;
+    margin-bottom: 30px; /* Space between the two clocks */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+    margin: 0 15px;
+    font-size: 2.5em;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    transition: transform 0.2s ease;
+}
+
+.inner:hover {
+    transform: scale(1.05);
+}
+
+/* Styling for the second clock (outer2) */
+.outer2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #555;
+    padding: 20px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.inner2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+    margin: 0 15px;
+    font-size: 2.5em;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    transition: transform 0.2s ease;
+}
+
+.inner2:hover {
+    transform: scale(1.05);
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #fff;
+    margin: 0 10px;
+}
+
+#am {
+    font-size: 1.5em;
+    color: #f0a500;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    .clock-container {
+        padding: 30px;
+    }
+
+    .inner, .inner2 {
+        height: 80px;
+        width: 80px;
+        font-size: 2em;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .inner, .inner2 {
+        height: 60px;
+        width: 60px;
+        font-size: 1.6em;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner" id="hours12">
+            <p> 00</p>
+        </div>
+        <h1>:</h1>
+        <div class="inner" >
+            <p class="minutes"> 00</p>
+        </div>
+        <h1>:</h1>
+        <div class="inner">
+            <p class="seconds"> 00</p>
+        </div>
+        <h1 id="am">am</h1>
+        
+    </div>
+
+    </div> <div class="outer2">
+    <div class="inner2" id="hours">
+        <p> 00</p>
+       
+    </div>
+    <h1>:</h1>
+    <div class="inner2" id="minutes">
+        <p class="minutes24"> 00</p>
+    </div>
+    <h1>:</h1>
+    <div class="inner2" >
+        <p class="seconds24"> 00</p>
+    </div>
+
+</div>
+    <script src="clock.js"></script>
+</body>
+</html>
